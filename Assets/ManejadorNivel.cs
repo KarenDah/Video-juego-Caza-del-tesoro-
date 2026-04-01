@@ -1,26 +1,26 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // cambio de escena
+using UnityEngine.SceneManagement; 
 
 public class ManejadorNivel : MonoBehaviour
 {
-    // Esta función la llamaremos desde el botón
+    // This function will be called from the button
     public void ReiniciarJuego()
     {
-        // Debug.Log para verificar que el clic funciona
+       // Debug.Log to verify the click is working
         Debug.Log("Reiniciando el juego...");
 
-        // Obtenemos el nombre de la escena actual
+        // Get the name of the current scene
         string nombreEscenaActual = SceneManager.GetActiveScene().name;
-
-        // Le decimos a Unity que cargue esa escena de nuevo
+        
+        // Tell Unity to load that scene again
         SceneManager.LoadScene(nombreEscenaActual);
     }
-    // volver al menú
+    // Return to the menu
     public void VolverAlMenu()
     {
         ControlPuntaje.ReiniciarMarcadorGlobal();
 
-        Debug.Log("Cargando el Menú Principal...");
+        Debug.Log("Cargando el MenÃº Principal...");
         SceneManager.LoadScene("MenuPrincipal");
     }
 }
