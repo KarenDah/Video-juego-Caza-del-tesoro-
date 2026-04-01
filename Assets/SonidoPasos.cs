@@ -4,7 +4,7 @@ public class SonidoPasos : MonoBehaviour
 {
     public AudioSource miAudio;
 
-    // Esta es la función que "disparará" la animación
+    // This is the function that will "trigger" the animation
     public void PlayFootstep()
     {
         if (miAudio != null)
