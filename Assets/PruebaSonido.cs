@@ -6,11 +6,11 @@ public class PruebaSonido : MonoBehaviour
 
     void Update()
     {
-        // Si presionas la tecla ESPACIO, debería sonar el paso
+        // If the SPACE key is pressed, the footstep should play
         if (Input.GetKeyDown(KeyCode.Space))
         {
             miAudio.Play();
-            Debug.Log("¡El sonido debería sonar!");
+            Debug.Log("Â¡El sonido deberÃ­a sonar!");
         }
     }
 }
