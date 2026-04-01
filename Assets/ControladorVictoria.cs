@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ControladorVictoria : MonoBehaviour
 {
-    public GameObject cofreAbierto; // Arrastra aquí tu chest_open en el inspector
+    public GameObject cofreAbierto; 
 
     private void OnTriggerEnter(Collider other)
     {
@@ -11,13 +11,13 @@ public class ControladorVictoria : MonoBehaviour
             Animator anim = other.GetComponent<Animator>();
             if (anim != null)
             {
-                // Activa el baile
+            // Trigger the dance animation
                 anim.SetTrigger("Bailar");
 
-                // OPCIONAL: Si quieres que el cofre se abra en este momento
+               //If you want the chest to open at this moment
                 if (cofreAbierto != null) cofreAbierto.SetActive(true);
 
-                // Desactivamos el cofre cerrado para que no se choquen
+                // Disable the closed chest to avoid collisions
                 gameObject.SetActive(false);
             }
         }
