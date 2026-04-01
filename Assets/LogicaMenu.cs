@@ -1,11 +1,10 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Importante para cambiar de escenas
-
+using UnityEngine.SceneManagement; 
 public class LogicaMenu : MonoBehaviour
 {
     public void Jugar()
     {
-        // "SampleScene" es el nombre de tu escena del bosque por defecto
+       // "SampleScene" is the default name of your forest scene
         SceneManager.LoadScene("SampleScene");
     }
 
