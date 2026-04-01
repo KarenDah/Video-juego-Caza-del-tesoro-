@@ -13,7 +13,7 @@ public class LogicaTesoro : MonoBehaviour
         float xAleatorio = Random.Range(-20f, 20f);
         float zAleatorio = Random.Range(-20f, 20f);
         transform.position = new Vector3(xAleatorio, 0.02f, zAleatorio);
-        Debug.Log("Tesoro escondido en una nueva ubicación");
+        Debug.Log("Tesoro escondido en una nueva ubicaciÃ³n");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,28 +33,26 @@ public class LogicaTesoro : MonoBehaviour
 
     void TerminarJuego(string ganador)
     {
-        // mensaje personalizado
+      
         if (textoVictoria != null)
         {
-            textoVictoria.gameObject.SetActive(true); // Muestra el letrero
-
+            textoVictoria.gameObject.SetActive(true); 
             if (ganador == "AZUL")
             {
-                textoVictoria.text = "¡KAREN HA ENCONTRADO EL TESORO!";
+                textoVictoria.text = "Â¡KAREN HA ENCONTRADO EL TESORO!";
             }
             else if (ganador == "ROJO")
             {
-                textoVictoria.text = "¡NAHUM HA ENCONTRADO EL TESORO!";
+                textoVictoria.text = "Â¡NAHUM HA ENCONTRADO EL TESORO!";
             }
         }
 
-        // CONTROLADOR DE PUNTOS Y SUMA
         ControlPuntaje marcador = FindObjectOfType<ControlPuntaje>();
         if (marcador != null)
         {
             marcador.SumarPunto(ganador);
         }
-        // Lógica visual y de audio
+    
         if (cofreCerrado != null) cofreCerrado.SetActive(false);
 
         GetComponent<BoxCollider>().enabled = false;
@@ -68,7 +66,6 @@ public class LogicaTesoro : MonoBehaviour
         AudioSource miAudio = GetComponent<AudioSource>();
         if (miAudio != null) miAudio.Play();
 
-        // Destruimos después de 5 segundos para que la música termine
         Destroy(gameObject, 5.0f);
     }
 }
